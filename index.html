@@ -1,49 +1,63 @@
+
 <!DOCTYPE HTML>
 <html>
   <head>
     <meta charset="utf-8">
 
-    <!-- set viewport to device width to allow responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS from CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <!-- link to custom stylesheet (always require after Bootstrap) -->
-    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
-    <!-- jQuery from CDN -->
+    
+     <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Brush+Script+MT"> 
+    
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+  
 
-
-    <!-- link to custom javascript file (always require after external JS libraries) -->
-
-    <title>Tic Tac Toe</title>
+   <title>tic tac toe</title>
   </head>
-  <body>
+  <body background="beach.jpg">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
           <h1>Tic Tac Toe</h1>
-          <hr>
+         <br></br>
         </div>
       </div>
       <div class="row">
-
-        <!-- a column represents our game board -->
-        <!-- the `offset` class helps us center the board -->
         <div class="col-md-6 col-md-offset-3" id="board">
 
-          <!-- you can put rows inside of columns! -->
-          <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
           <div class="row">
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
+            <div class="col-md-4 box" id="a1"></div>
+            <div class="col-md-4 box" id="a2"></div>
+            <div class="col-md-4 box" id="a3"></div>
           </div>
-
-
-
+          <div class="row">
+            <div class="col-md-4 box" id="b1"></div>
+            <div class="col-md-4 box" id="b2"></div>
+            <div class="col-md-4 box" id="b3"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 box" id="c1"></div>
+            <div class="col-md-4 box" id="c2"></div>
+            <div class="col-md-4 box" id="c3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        <img src="blueshell.png" class="img">
+        <img src="pinkshell.png" class="image">
+          <br></br>
+          <center><button class="btn btn-lg btn-danger" id="reset">Reset</button></center>
         </div>
       </div>
     </div>
   </body>
 </html>
+    
