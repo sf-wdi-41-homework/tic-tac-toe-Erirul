@@ -3,7 +3,7 @@
 }
 
 h1 {
-  font-family:'Brush Script MT';
+  font-family: 'Brush Script MT';
   font-size: 60px;
 }
 
@@ -22,12 +22,12 @@ h1 {
 }
 
 button {
-	border: 2px solid black;
-	margin-top: 20px;
+  border: 2px solid black;
+  margin-top: 20px;
 }
 
 .X {
- color: #f2183d;
+  color: #f2183d;
   font-size: 100px;
   font-family: 'Brush Script MT';
 }
@@ -35,8 +35,7 @@ button {
 .O {
   color: #4ecdc4;
   font-size: 100px;
-  font-family:'Brush Script MT';
-
+  font-family: 'Brush Script MT';
 }
 
 .btn-danger {
@@ -50,37 +49,47 @@ button {
 }
 
 .img {
-    top: 50%;
-    left: 50%;
-    right: 60%;
-    width: 140px;
-    height: 140px;
-    
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
-    float:left;
-    margin-left:50px;
-    margin-bottom:50px;
+  top: 50%;
+  left: 50%;
+  right: 60%;
+  width: 140px;
+  height: 140px;
+
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+  float: left;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }
 
 .image {
-    top: 50%;
-    left: 50%;
-    right: 60%;
-    width: 140px;
-    height: 140px;
-    
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
-    float:right;
-    margin-right:50px;
-    margin-bottom:50px;
+  top: 50%;
+  left: 50%;
+  right: 60%;
+  width: 140px;
+  height: 140px;
+
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+  float: right;
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
-
-
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
