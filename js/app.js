@@ -1,41 +1,65 @@
 // wait for the DOM to finish loading
 $(document).ready(function() {
+  // TODO: be careful of your indentation
+  var $boxes = $('.box');
+  var turn = 'X';
+  var moves = 0;
 
-var $boxes = $('.box');
-var turn = "X";
-var moves = 0;
+  $boxes.on('click', function() {
+    if ($(this).text() === '') {
+      $(this).text(turn);
+      $(this).addClass(turn);
+      moves += 1;
 
+      var winner = getWinner();
+      if (winner) {
+        alert('Player ' + winner + ' won!');
+        resetGame();
+      } else if (moves < 9) {
+        changeTurn();
+      } else {
+        alert('Neither player won!');
+        resetGame();
+      }
+    }
+  });
 
+  $('#reset').on('click', function() {
+    resetGame();
+  });
+
+  // TODO: move all of your function definitions out of youur document ready page. This will mean passing $boxes as an argument to make sure you can check your clicks.
+  // Think of your function definitions as spells in a spell book and your document ready the actual casting of the spells.
   var resetGame = function() {
-    $boxes.text("");
-    $boxes.removeClass("X");
-    $boxes.removeClass("O");
-    turn = "X";   
+    $boxes.text('');
+    $boxes.removeClass('X');
+    $boxes.removeClass('O');
+    turn = 'X';
     moves = 0;
   };
 
-
   var changeTurn = function() {
-    if (turn === "X") {
-      turn = "O";
+    if (turn === 'X') {
+      turn = 'O';
     } else {
-      turn = "X";
+      turn = 'X';
     }
   };
 
+  // TODO: This is a clever way of determining the winner! Nice!
   var allThree = function($firstBox, $secondBox, $thirdBox) {
-   var firstBoxOwner = $firstBox.text(),
-        secondBoxOwner = $secondBox.text(),
-        thirdBoxOwner = $thirdBox.text();
+    var firstBoxOwner = $firstBox.text(),
+      secondBoxOwner = $secondBox.text(),
+      thirdBoxOwner = $thirdBox.text();
 
-    if ((firstBoxOwner === secondBoxOwner) && (secondBoxOwner === thirdBoxOwner)){
-      if (firstBoxOwner === "X"){
-        return "X";
-      } else if (firstBoxOwner === "O"){
-        return "O";
+    if (firstBoxOwner === secondBoxOwner && secondBoxOwner === thirdBoxOwner) {
+      if (firstBoxOwner === 'X') {
+        return 'X';
+      } else if (firstBoxOwner === 'O') {
+        return 'O';
       }
     }
-  
+
     return null;
   };
 
@@ -44,7 +68,6 @@ var moves = 0;
     var rightUpDiag = allThree($boxes.eq(2), $boxes.eq(4), $boxes.eq(6));
     return leftDownDiag || rightUpDiag;
   };
-
 
   var columnWinner = function() {
     var leftCol = allThree($boxes.eq(0), $boxes.eq(3), $boxes.eq(6));
@@ -64,31 +87,4 @@ var moves = 0;
   var getWinner = function() {
     return diagonalWinner() || (rowWinner() || columnWinner());
   };
-
-  $('#reset').on('click', function() {
-    resetGame();
-  });
-
-  $boxes.on('click', function() {
-    if ($(this).text() === "") {
-      $(this).text(turn);
-      $(this).addClass(turn);
-      moves += 1;
-      
-      var winner = getWinner();
-      if (winner) {
-        alert("Player " + winner + " won!");
-        resetGame();
-      } else if (moves < 9) {
-        changeTurn();
-      } else {
-        alert("Neither player won!");
-        resetGame();
-      }
-    }
-  });
-
-
 });
- 
-
